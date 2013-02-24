@@ -1,7 +1,7 @@
 Automatic Gain Control
 ======================
 
-Automatic Gain Control (AGC) for audio signals in python, based in [Dan Ellis' code][ref1]
+Automatic Gain Control (AGC) for audio signals in python, based on Dan Ellis' [Matlab code][ref1].
 
 The code is based in the original Matlab implementation in the above link. It is almost exactly the same, with the exception of the STFT and ISTFT functions, which I implemented from scratch. A sample `WAV` file (obtained from the original Matlab source code) is provided for testing.
 
