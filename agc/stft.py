@@ -3,13 +3,15 @@ import numpy as np
 
 def stft(x, frame_size, hop_size=None, window=None, N=None, only_positive_freqs=True):
     """
+    Compute the Short-Time Fourier Transform (STFT) of a signal x.
+
     x:          signal (for now, only mono is supported)
     frame_size: in samples
-    hop_size:   in samples
+    hop_size:   in samples (default 25% of frame size)
     window:     numpy array with the window to be used
     N:          number of FFT points to compute
     only_positive_freqs:
-                if True, only the positive FFT bins (including f==0) are returned
+                if True, only the positive FFT bins (including DC) are returned
     """
 
     # set defaults and sanity check
@@ -37,11 +39,13 @@ def stft(x, frame_size, hop_size=None, window=None, N=None, only_positive_freqs=
 
 def istft(X, frame_size, hop_size=None, window=None, only_positive_freqs=True):
     """
-    X:          spectrogram (columns encode time and rows encode frequency)
+    Compute the Inverse Short-Time Fourier Transform (ISTFT) of a stft X.
+
+    X:          Complex STFT (columns encode time and rows encode frequency)
     frame_size: time-domain frame size to use, in sample (each column in X correspond to these many samples in time)
-    hop_size:   in samples
+    hop_size:   in samples (default 25% of frame size)
     only_positive_freqs:
-                if True, only the positive bins (including f == 0) are included in X
+                if True, only the positive bins (including DC) are considered to be included in X
     """
 
     # set defaults and sanity check
