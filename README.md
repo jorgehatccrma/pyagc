@@ -1,16 +1,14 @@
 Automatic Gain Control
 ======================
 
- * Author: Jorge Herrera (jorgeh@ccrma.stanford.edu)
+Automatic Gain Control (AGC) for audio signals in python, based in [Dan Ellis' code][ref1]
 
-
-Code that implements Automatic Gain Control (AGC) for audio signals in python, based in [Dan Ellis' code][ref1]
-
-The code is based in the original Matlab implementation in the above link, with some minor *pythonizations*. A sample `WAV` file is provided. The file was obtained from the original Matlab source code.
+The code is based in the original Matlab implementation in the above link. It is almost exactly the same, with the exception of the STFT and ISTFT functions, which I implemented from scratch. A sample `WAV` file (obtained from the original Matlab source code) is provided for testing.
 
 ## Dependencies
 
-The code depends on NumPy and SciPy.
+The code depends on NumPy / SciPy.
+
 
 ## Example of usage
 
